@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact DORKAM Designs for custom African fashion, women's wear, girls' fashion and event outfits.">
+    <title>Contact Us | DORKAM Designs</title>
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #59b82a;
+    --dark-green: #3d8f1d;
+    --lime: #d9ed00;
+    --charcoal: #414141;
+    --dark: #303030;
+    --white: #ffffff;
+    --light: #f5f7f4;
+    --text: #626262;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+.navbar {
+    width: 100%;
+    background: var(--charcoal);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    min-height: 70px;
+    margin: auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo span {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo small {
+    color: var(--lime);
+    font-size: 9px;
+    letter-spacing: 4px;
+    margin-top: 5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--lime);
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid var(--lime);
+    padding-bottom: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.contact-hero {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(120deg, #eef4eb, #ffffff, #f1f6ed);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-hero::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: var(--lime);
+    opacity: 0.18;
+    top: -100px;
+    right: 10%;
+}
+
+.contact-hero::after {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: var(--green);
+    opacity: 0.12;
+    bottom: -90px;
+    left: 10%;
+}
+
+.hero-content {
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content > p:first-child {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.hero-content h1 {
+    font-size: 54px;
+    color: var(--charcoal);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.hero-content h1 span {
+    color: var(--green);
+}
+
+.hero-line {
+    width: 55px;
+    height: 4px;
+    background: var(--lime);
+    margin: 0 auto 20px;
+}
+
+.hero-description {
+    max-width: 620px;
+    margin: auto;
+    color: #666;
+    font-size: 15px;
+}
+
+.contact-section {
+    padding: 90px 25px;
+    background: var(--white);
+}
+
+.contact-wrapper {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+}
+
+.section-label {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.contact-details h2,
+.form-card h2 {
+    color: var(--charcoal);
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 14px;
+    margin-bottom: 35px;
+    max-width: 480px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.detail-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--lime);
+    color: var(--charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.detail-item h3 {
+    color: var(--charcoal);
+    font-size: 14px;
+}
+
+.detail-item p {
+    font-size: 13px;
+}
+
+.contact-box {
+    margin-top: 35px;
+    background: var(--charcoal);
+    color: white;
+    padding: 25px;
+    border-left: 5px solid var(--green);
+}
+
+.contact-box h3 {
+    color: var(--lime);
+    margin-bottom: 6px;
+    font-size: 17px;
+}
+
+.contact-box p {
+    font-size: 13px;
+    color: #ddd;
+}
+
+.form-card {
+    background: var(--light);
+    padding: 40px;
+    border-top: 5px solid var(--green);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.form-heading {
+    margin-bottom: 25px;
+}
+
+.form-heading > p:last-child {
+    font-size: 13px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--charcoal);
+    margin-bottom: 7px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #d5d5d5;
+    background: white;
+    color: #555;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(89, 184, 42, 0.1);
+}
+
+.input-group textarea {
+    resize: vertical;
+}
+
+.budget-wrapper {
+    display: flex;
+    background: white;
+    border: 1px solid #d5d5d5;
+}
+
+.budget-wrapper span {
+    background: var(--charcoal);
+    color: white;
+    padding: 13px 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.budget-wrapper input {
+    border: none;
+    flex: 1;
+}
+
+.submit-btn {
+    width: 100%;
+    border: none;
+    background: var(--green);
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn span {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.submit-btn:hover {
+    background: var(--charcoal);
+    transform: translateY(-2px);
+}
+
+.footer {
+    background: var(--charcoal);
+    color: white;
+    padding-top: 55px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 25px 45px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+}
+
+.footer-logo {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.footer-logo span {
+    color: var(--lime);
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-left: 5px;
+}
+
+.footer-brand p {
+    max-width: 360px;
+    color: #ccc;
+    font-size: 13px;
+}
+
+.footer h3 {
+    color: var(--lime);
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--lime);
+}
+
+.footer-contact p {
+    color: #ccc;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding: 18px 20px;
+    text-align: center;
+    color: #aaa;
+    font-size: 12px;
+}
+
+@media (max-width: 800px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--charcoal);
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 13px;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .nav-container {
+        padding: 0 18px;
+    }
+
+    .contact-hero {
+        min-height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .contact-section {
+        padding: 60px 15px;
+    }
+
+    .contact-details h2,
+    .form-card h2 {
+        font-size: 30px;
+    }
+
+    .form-card {
+        padding: 25px 20px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <span>DORKAM</span>
+            <small>DESIGNS</small>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="contact-hero">
+        <div class="hero-content">
+            <p>LET'S CREATE SOMETHING BEAUTIFUL</p>
+            <h1>Contact <span>DORKAM</span></h1>
+            <div class="hero-line"></div>
+            <p class="hero-description">
+                Have a design in mind? Tell us what you are looking for
+                and let's bring your fashion vision to life.
+            </p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+
+        <div class="contact-wrapper">
+
+            <div class="contact-details">
+
+                <p class="section-label">GET IN TOUCH</p>
+
+                <h2>Let's Talk<br>Fashion.</h2>
+
+                <p class="intro-text">
+                    Whether you are looking for African wear, women's fashion,
+                    girls' outfits, event wear or a completely custom design,
+                    DORKAM Designs is ready to create something made especially
+                    for you.
+                </p>
+
+                <div class="detail-item">
+                    <div class="detail-icon">☎</div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+254 712 623 114</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="detail-icon">✉</div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>info@dorkamdesigns.com</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="detail-icon">⌖</div>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Machakos, Kenya</p>
+                    </div>
+                </div>
+
+                <div class="contact-box">
+                    <h3>Custom Designs</h3>
+                    <p>
+                        Share your ideas, inspiration or occasion with us.
+                        We'll work with you to create a unique outfit that
+                        matches your style.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="form-card">
+
+                <div class="form-heading">
+                    <p class="section-label">SEND AN ENQUIRY</p>
+                    <h2>Tell Us What You Need</h2>
+                    <p>
+                        Fill in the form below and we'll get back to you.
+                    </p>
+                </div>
+
+                <form action="#" method="POST">
+
+                    <div class="input-group">
+                        <label for="name">Full Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="phone">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="e.g. 0712 345 678"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="service">Service You Want</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="african-wear">African Wear</option>
+                            <option value="womens-fashion">Women's Fashion</option>
+                            <option value="girls-fashion">Girls' Fashion</option>
+                            <option value="event-wear">Event Wear</option>
+                            <option value="custom-design">Custom Design</option>
+                            <option value="alterations">Alterations & Styling</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="budget">Estimated Budget</label>
+
+                        <div class="budget-wrapper">
+                            <span>KSh</span>
+                            <input
+                                type="number"
+                                id="budget"
+                                name="budget"
+                                placeholder="Enter estimated budget"
+                                min="0"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="message">Tell Us More</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            placeholder="Tell us about the outfit or design you have in mind..."
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Send Enquiry
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <a href="index.html" class="footer-logo">DORKAM <span>DESIGNS</span></a>
+
+            <p>
+                Creating elegant African-inspired fashion and
+                custom designs made especially for you.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Explore</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact</h3>
+            <p>+254 712 623 114</p>
+            <p>info@dorkamdesigns.com</p>
+            <p>Machakos, Kenya</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 DORKAM Designs. All Rights Reserved.</p>
+    </div>
+
+</footer>
+
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+    });
+</script>
+
+</body>
+</html>

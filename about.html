@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about DORKAM Designs, a fashion design company creating elegant African-inspired fashion for women and girls.">
+    <title>About Us | DORKAM Designs</title>
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #59b82a;
+    --dark-green: #3d8f1d;
+    --lime: #d9ed00;
+    --charcoal: #414141;
+    --dark: #303030;
+    --white: #ffffff;
+    --light: #f5f7f4;
+    --text: #626262;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+.navbar {
+    width: 100%;
+    background: var(--charcoal);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    min-height: 70px;
+    margin: auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo span {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo small {
+    color: var(--lime);
+    font-size: 9px;
+    letter-spacing: 4px;
+    margin-top: 5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--lime);
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid var(--lime);
+    padding-bottom: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.about-hero {
+    min-height: 370px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(120deg, #eef4eb, #ffffff, #f1f6ed);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: var(--lime);
+    border-radius: 50%;
+    opacity: 0.18;
+    top: -110px;
+    right: 8%;
+}
+
+.about-hero::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: var(--green);
+    border-radius: 50%;
+    opacity: 0.12;
+    bottom: -100px;
+    left: 8%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+}
+
+.eyebrow {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.hero-content h1 {
+    color: var(--charcoal);
+    font-size: 55px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.hero-line {
+    width: 55px;
+    height: 4px;
+    background: var(--lime);
+    margin: 0 auto 20px;
+}
+
+.hero-content > p:last-child {
+    max-width: 620px;
+    margin: auto;
+    font-size: 15px;
+}
+
+.story-section {
+    padding: 100px 25px;
+    background: white;
+}
+
+.story-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+    align-items: center;
+}
+
+.story-image {
+    position: relative;
+}
+
+.image-frame {
+    height: 520px;
+    background: var(--light);
+    padding: 15px;
+    position: relative;
+}
+
+.image-frame::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-top: 5px solid var(--green);
+    border-left: 5px solid var(--green);
+    top: -12px;
+    left: -12px;
+}
+
+.image-frame::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-right: 5px solid var(--lime);
+    border-bottom: 5px solid var(--lime);
+    bottom: -12px;
+    right: -12px;
+}
+
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-tag {
+    position: absolute;
+    bottom: 25px;
+    left: -20px;
+    background: var(--charcoal);
+    color: white;
+    padding: 14px 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-tag strong {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.image-tag span {
+    color: var(--lime);
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.section-label {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+}
+
+.story-content h2 {
+    color: var(--charcoal);
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.story-content h2 span {
+    color: var(--green);
+}
+
+.story-content p {
+    font-size: 14px;
+    margin-bottom: 17px;
+}
+
+.green-button,
+.lime-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    padding: 14px 22px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    margin-top: 12px;
+}
+
+.green-button {
+    background: var(--green);
+    color: white;
+}
+
+.green-button:hover {
+    background: var(--charcoal);
+    transform: translateY(-2px);
+}
+
+.mission-section {
+    background: var(--light);
+    padding: 90px 25px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: auto auto 50px;
+}
+
+.section-heading h2 {
+    color: var(--charcoal);
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.section-heading > p:last-child {
+    font-size: 14px;
+}
+
+.mission-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.mission-card {
+    background: white;
+    padding: 35px 30px;
+    position: relative;
+    border-top: 4px solid var(--green);
+    transition: 0.3s ease;
+}
+
+.mission-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.mission-card.featured {
+    background: var(--charcoal);
+    color: white;
+}
+
+.card-number {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--green);
+}
+
+.card-icon {
+    color: var(--green);
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.mission-card h3 {
+    color: var(--charcoal);
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.mission-card.featured h3 {
+    color: white;
+}
+
+.mission-card p {
+    font-size: 13px;
+}
+
+.values-section {
+    padding: 95px 25px;
+    background: var(--charcoal);
+    color: white;
+}
+
+.values-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+}
+
+.values-heading h2 {
+    font-size: 40px;
+    line-height: 1.15;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.value-item {
+    display: flex;
+    gap: 15px;
+    border-bottom: 1px solid #5b5b5b;
+    padding-bottom: 25px;
+}
+
+.value-item > span {
+    color: var(--lime);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.value-item h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.value-item p {
+    color: #ccc;
+    font-size: 13px;
+}
+
+.collections-section {
+    padding: 90px 25px;
+    background: white;
+}
+
+.collection-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.collection-card {
+    background: var(--light);
+    padding: 30px 25px;
+    min-height: 210px;
+    border-bottom: 4px solid var(--green);
+    transition: 0.3s ease;
+}
+
+.collection-card:hover {
+    transform: translateY(-6px);
+    background: var(--charcoal);
+    color: white;
+}
+
+.collection-number {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.collection-card h3 {
+    color: var(--charcoal);
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.collection-card:hover h3 {
+    color: var(--lime);
+}
+
+.collection-card p {
+    font-size: 13px;
+}
+
+.cta-section {
+    padding: 90px 25px;
+    background: var(--green);
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.cta-section .section-label {
+    color: white;
+}
+
+.cta-section h2 {
+    color: white;
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.cta-section h2 span {
+    color: var(--lime);
+}
+
+.cta-section p:not(.section-label) {
+    color: white;
+    font-size: 14px;
+}
+
+.lime-button {
+    background: var(--lime);
+    color: var(--charcoal);
+}
+
+.lime-button:hover {
+    background: var(--charcoal);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.footer {
+    background: var(--charcoal);
+    color: white;
+    padding-top: 55px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 25px 45px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+}
+
+.footer-logo {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.footer-logo span {
+    color: var(--lime);
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-left: 5px;
+}
+
+.footer-brand p {
+    max-width: 360px;
+    color: #ccc;
+    font-size: 13px;
+}
+
+.footer h3 {
+    color: var(--lime);
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--lime);
+}
+
+.footer-contact p {
+    color: #ccc;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding: 18px 20px;
+    text-align: center;
+    color: #aaa;
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+
+    .story-container {
+        grid-template-columns: 1fr;
+    }
+
+    .story-image {
+        max-width: 650px;
+        margin: auto;
+    }
+
+    .mission-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    .values-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .collection-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--charcoal);
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 13px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .story-content h2 {
+        font-size: 31px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .nav-container {
+        padding: 0 18px;
+    }
+
+    .about-hero {
+        min-height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .story-section {
+        padding: 65px 15px;
+    }
+
+    .image-frame {
+        height: 400px;
+    }
+
+    .mission-section,
+    .values-section,
+    .collections-section {
+        padding: 65px 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-section h2 {
+        font-size: 30px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <span>DORKAM</span>
+            <small>DESIGNS</small>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="about-hero">
+        <div class="hero-content">
+            <p class="eyebrow">GET TO KNOW DORKAM</p>
+            <h1>Our Story</h1>
+            <div class="hero-line"></div>
+            <p>
+                Fashion designed to celebrate individuality, culture
+                and the beauty of African-inspired style.
+            </p>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="story-container">
+
+            <div class="story-image">
+                <div class="image-frame">
+                    <img src="images/gallery6.jpg" alt="African-inspired fashion designed by DORKAM Designs">
+                </div>
+                <div class="image-tag">
+                    <strong>DORKAM</strong>
+                    <span>DESIGNS</span>
+                </div>
+            </div>
+
+            <div class="story-content">
+                <p class="section-label">WHO WE ARE</p>
+                <h2>Where Creativity Meets <span>Culture</span></h2>
+
+                <p>
+                    DORKAM Designs is a fashion design company dedicated to
+                    creating beautiful, distinctive and thoughtfully designed
+                    clothing for women and girls.
+                </p>
+
+                <p>
+                    Our designs draw inspiration from African culture, bold
+                    patterns, beautiful fabrics and contemporary fashion.
+                    We combine these influences to create outfits that feel
+                    stylish, confident and uniquely personal.
+                </p>
+
+                <p>
+                    From African wear and women's fashion to girls' outfits,
+                    event wear and custom designs, every piece is created
+                    with attention to detail and a passion for fashion.
+                </p>
+
+                <a href="gallery.html" class="green-button">
+                    Explore Our Gallery
+                    <span>→</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="mission-section">
+
+        <div class="section-heading">
+            <p class="section-label">WHAT DRIVES US</p>
+            <h2>Our Mission & Vision</h2>
+            <p>
+                We believe fashion should be more than what you wear.
+                It should express who you are.
+            </p>
+        </div>
+
+        <div class="mission-grid">
+
+            <div class="mission-card">
+                <div class="card-number">01</div>
+                <div class="card-icon">✦</div>
+                <h3>Our Mission</h3>
+                <p>
+                    To create quality fashion that allows our clients to
+                    express their personality, confidence and individuality
+                    through thoughtfully designed clothing.
+                </p>
+            </div>
+
+            <div class="mission-card featured">
+                <div class="card-number">02</div>
+                <div class="card-icon">◆</div>
+                <h3>Our Vision</h3>
+                <p>
+                    To grow into a recognized fashion brand known for
+                    creativity, quality craftsmanship and modern African
+                    fashion design.
+                </p>
+            </div>
+
+            <div class="mission-card">
+                <div class="card-number">03</div>
+                <div class="card-icon">✧</div>
+                <h3>Our Purpose</h3>
+                <p>
+                    To bring unique fashion ideas to life while celebrating
+                    African creativity, culture and contemporary style.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="values-section">
+
+        <div class="values-container">
+
+            <div class="values-heading">
+                <p class="section-label">WHAT WE STAND FOR</p>
+                <h2>Our Core Values</h2>
+            </div>
+
+            <div class="values-grid">
+
+                <div class="value-item">
+                    <span>01</span>
+                    <div>
+                        <h3>Creativity</h3>
+                        <p>
+                            We approach every design with fresh ideas,
+                            imagination and originality.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="value-item">
+                    <span>02</span>
+                    <div>
+                        <h3>Quality</h3>
+                        <p>
+                            We pay attention to materials, construction,
+                            finishing and the details that matter.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="value-item">
+                    <span>03</span>
+                    <div>
+                        <h3>Authenticity</h3>
+                        <p>
+                            We celebrate African-inspired fashion while
+                            giving every design a contemporary character.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="value-item">
+                    <span>04</span>
+                    <div>
+                        <h3>Customer Focus</h3>
+                        <p>
+                            We listen to our clients and create designs
+                            around their preferences and occasions.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="collections-section">
+
+        <div class="section-heading">
+            <p class="section-label">WHAT WE CREATE</p>
+            <h2>Our Fashion</h2>
+        </div>
+
+        <div class="collection-grid">
+
+            <div class="collection-card">
+                <div class="collection-number">01</div>
+                <h3>African Wear</h3>
+                <p>
+                    Modern African-inspired outfits that combine beautiful
+                    prints with elegant contemporary designs.
+                </p>
+            </div>
+
+            <div class="collection-card">
+                <div class="collection-number">02</div>
+                <h3>Women's Fashion</h3>
+                <p>
+                    Stylish pieces designed for everyday confidence,
+                    special occasions and personal expression.
+                </p>
+            </div>
+
+            <div class="collection-card">
+                <div class="collection-number">03</div>
+                <h3>Girls' Fashion</h3>
+                <p>
+                    Beautiful and comfortable outfits designed for girls
+                    and their special moments.
+                </p>
+            </div>
+
+            <div class="collection-card">
+                <div class="collection-number">04</div>
+                <h3>Custom Designs</h3>
+                <p>
+                    Unique outfits created around your ideas, measurements,
+                    occasion and individual style.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <p class="section-label">YOUR STYLE, YOUR STORY</p>
+            <h2>Ready to Create Something <span>Unique?</span></h2>
+            <p>
+                Let's turn your fashion idea into a design that feels
+                completely yours.
+            </p>
+            <a href="contact.html" class="lime-button">
+                Get In Touch
+                <span>→</span>
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <a href="index.html" class="footer-logo">
+                DORKAM <span>DESIGNS</span>
+            </a>
+
+            <p>
+                Creating elegant African-inspired fashion and
+                custom designs made especially for you.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Explore</h3>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact</h3>
+            <p>+254 712 623 114</p>
+            <p>info@dorkamdesigns.com</p>
+            <p>Machakos, Kenya</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 DORKAM Designs. All Rights Reserved.</p>
+    </div>
+
+</footer>
+
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+    });
+</script>
+
+</body>
+</html>

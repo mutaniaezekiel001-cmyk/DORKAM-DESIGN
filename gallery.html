@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore the DORKAM Designs fashion gallery featuring African wear, women's fashion, girls' fashion and custom designs.">
+    <meta name="keywords" content="DORKAM Designs gallery, African fashion designs, African wear Kenya, fashion designs Kenya">
+
+    <title>Gallery | DORKAM Designs</title>
+
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #59b82a;
+    --dark-green: #3d8f1d;
+    --lime: #d9ed00;
+    --charcoal: #414141;
+    --dark: #303030;
+    --white: #ffffff;
+    --light: #f5f7f4;
+    --text: #626262;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.navbar {
+    background: var(--charcoal);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    min-height: 70px;
+    margin: auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo span {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo small {
+    color: var(--lime);
+    font-size: 9px;
+    letter-spacing: 4px;
+    margin-top: 5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--lime);
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid var(--lime);
+    padding-bottom: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.gallery-hero {
+    min-height: 430px;
+    background: linear-gradient(120deg, #eef5ea, #ffffff, #edf5e9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-hero::before {
+    content: "";
+    width: 350px;
+    height: 350px;
+    border: 60px solid rgba(89, 184, 42, 0.08);
+    border-radius: 50%;
+    position: absolute;
+    right: -100px;
+    top: -100px;
+}
+
+.gallery-hero::after {
+    content: "";
+    width: 230px;
+    height: 230px;
+    background: var(--lime);
+    opacity: 0.12;
+    border-radius: 50%;
+    position: absolute;
+    left: -80px;
+    bottom: -100px;
+}
+
+.hero-content {
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+    padding: 70px 20px;
+    animation: heroAppear 0.9s ease;
+}
+
+.hero-label {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    color: var(--charcoal);
+    font-size: clamp(50px, 8vw, 80px);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: var(--green);
+}
+
+.hero-content > p:not(.hero-label) {
+    max-width: 600px;
+    margin: auto;
+    font-size: 15px;
+}
+
+.hero-line {
+    width: 55px;
+    height: 4px;
+    background: var(--lime);
+    margin: 22px auto 0;
+}
+
+.featured-section {
+    padding: 100px 25px;
+    background: white;
+}
+
+.featured-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 65px;
+    align-items: center;
+}
+
+.featured-image {
+    height: 570px;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.featured-image:hover img {
+    transform: scale(1.04);
+}
+
+.featured-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--lime);
+    color: var(--charcoal);
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.featured-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 80px 35px 30px;
+    color: white;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+.featured-caption span {
+    color: var(--lime);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.featured-caption h2 {
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.section-label {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+}
+
+.featured-content h2 {
+    color: var(--charcoal);
+    font-size: 42px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.featured-content h2 span {
+    color: var(--green);
+}
+
+.featured-content p:not(.section-label) {
+    font-size: 14px;
+    margin-bottom: 17px;
+}
+
+.design-button,
+.process-button,
+.cta-button {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 14px 23px;
+    transition: 0.3s ease;
+}
+
+.design-button {
+    margin-top: 10px;
+    background: var(--green);
+    color: white;
+}
+
+.design-button:hover {
+    background: var(--charcoal);
+    transform: translateY(-3px);
+}
+
+.designs-section {
+    padding: 100px 25px;
+    background: var(--light);
+}
+
+.section-heading {
+    max-width: 700px;
+    text-align: center;
+    margin: auto auto 35px;
+}
+
+.section-heading h2 {
+    color: var(--charcoal);
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 span {
+    color: var(--green);
+}
+
+.section-heading > p:last-child {
+    font-size: 14px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 45px;
+}
+
+.filter-btn {
+    background: white;
+    color: var(--charcoal);
+    border: 1px solid #ddd;
+    padding: 11px 17px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--green);
+    color: white;
+    border-color: var(--green);
+}
+
+.gallery-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.design-card {
+    background: white;
+    overflow: hidden;
+    transition: 0.4s ease;
+    animation: cardAppear 0.7s ease both;
+}
+
+.design-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.design-image {
+    height: 360px;
+    position: relative;
+    overflow: hidden;
+}
+
+.design-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.design-card:hover .design-image img {
+    transform: scale(1.07);
+}
+
+.design-number {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    background: var(--lime);
+    color: var(--charcoal);
+    font-size: 10px;
+    font-weight: bold;
+    padding: 6px 8px;
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(48, 48, 48, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.35s ease;
+}
+
+.design-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.view-design {
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    padding: 11px 18px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.view-design:hover {
+    background: var(--lime);
+    color: var(--charcoal);
+    border-color: var(--lime);
+}
+
+.design-info {
+    min-height: 85px;
+    padding: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.design-info span:first-child {
+    color: var(--green);
+    text-transform: uppercase;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.design-info h3 {
+    color: var(--charcoal);
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+.arrow {
+    color: var(--green);
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.design-card:hover .arrow {
+    transform: translate(4px, -4px);
+}
+
+.design-process {
+    background: var(--charcoal);
+    color: white;
+    padding: 100px 25px;
+    text-align: center;
+}
+
+.process-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.process-content .section-label {
+    color: var(--lime);
+}
+
+.process-content h2 {
+    font-size: 45px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.process-content h2 span {
+    color: var(--lime);
+}
+
+.process-content > p:not(.section-label) {
+    color: #ddd;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.process-button {
+    background: var(--green);
+    color: white;
+}
+
+.process-button:hover {
+    background: var(--lime);
+    color: var(--charcoal);
+    transform: translateY(-3px);
+}
+
+.gallery-cta {
+    padding: 100px 25px;
+    background: var(--green);
+    text-align: center;
+    color: white;
+}
+
+.gallery-cta .section-label {
+    color: white;
+}
+
+.gallery-cta h2 {
+    font-size: 48px;
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+
+.gallery-cta h2 span {
+    color: var(--lime);
+}
+
+.gallery-cta p:not(.section-label) {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    background: var(--lime);
+    color: var(--charcoal);
+}
+
+.cta-button:hover {
+    background: var(--charcoal);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.footer {
+    background: var(--charcoal);
+    color: white;
+    padding-top: 55px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 25px 45px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+}
+
+.footer-logo {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.footer-logo span {
+    color: var(--lime);
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-left: 5px;
+}
+
+.footer-brand p {
+    max-width: 360px;
+    color: #ccc;
+    font-size: 13px;
+}
+
+.footer h3 {
+    color: var(--lime);
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: var(--lime);
+}
+
+.footer-contact p {
+    color: #ccc;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding: 18px 20px;
+    text-align: center;
+    color: #aaa;
+    font-size: 12px;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    max-width: 900px;
+    max-height: 90vh;
+    position: relative;
+    text-align: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    display: block;
+}
+
+.lightbox-title {
+    color: white;
+    font-size: 18px;
+    margin-top: 12px;
+}
+
+.close-lightbox {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: var(--lime);
+    color: var(--charcoal);
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+@keyframes heroAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-container {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-image {
+        max-width: 700px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--charcoal);
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 13px;
+    }
+
+    .gallery-hero {
+        min-height: 350px;
+    }
+
+    .featured-section,
+    .designs-section {
+        padding: 70px 18px;
+    }
+
+    .featured-image {
+        height: 450px;
+    }
+
+    .featured-content h2 {
+        font-size: 34px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .design-image {
+        height: 450px;
+    }
+
+    .process-content h2 {
+        font-size: 34px;
+    }
+
+    .gallery-cta h2 {
+        font-size: 35px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .hero-content h1 {
+        font-size: 45px;
+    }
+
+    .featured-image {
+        height: 400px;
+    }
+
+    .design-image {
+        height: 400px;
+    }
+
+    .filter-buttons {
+        gap: 6px;
+    }
+
+    .filter-btn {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <span>DORKAM</span>
+            <small>DESIGNS</small>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="gallery-hero">
+
+        <div class="hero-content">
+
+            <p class="hero-label">DORKAM DESIGN COLLECTION</p>
+
+            <h1>
+                A Gallery Of
+                <span>Creativity.</span>
+            </h1>
+
+            <p>
+                Explore our collection of fashion designs created to
+                celebrate African culture, individuality and modern style.
+            </p>
+
+            <div class="hero-line"></div>
+
+        </div>
+
+    </section>
+
+
+    <section class="featured-section">
+
+        <div class="featured-container">
+
+            <div class="featured-image">
+
+                <img src="images/gallery1.jpg"
+                     alt="Featured DORKAM fashion design">
+
+                <div class="featured-number">
+                    01
+                </div>
+
+                <div class="featured-caption">
+                    <span>FEATURED DESIGN</span>
+                    <h2>Modern African Elegance</h2>
+                </div>
+
+            </div>
+
+            <div class="featured-content">
+
+                <p class="section-label">THE DORKAM COLLECTION</p>
+
+                <h2>
+                    Fashion That
+                    <span>Speaks.</span>
+                </h2>
+
+                <p>
+                    Every design tells a story. Our collections combine
+                    African-inspired patterns, contemporary silhouettes
+                    and carefully selected fabrics to create fashion
+                    that feels both authentic and modern.
+                </p>
+
+                <p>
+                    Browse through our designs and discover pieces created
+                    for women, girls and anyone who appreciates distinctive
+                    African fashion.
+                </p>
+
+                <a href="contact.html" class="design-button">
+                    Create Your Own Design →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="designs-section">
+
+        <div class="section-heading">
+
+            <p class="section-label">EXPLORE OUR WORK</p>
+
+            <h2>
+                Our <span>Designs</span>
+            </h2>
+
+            <p>
+                A selection of designs created with creativity,
+                culture and attention to detail.
+            </p>
+
+        </div>
+
+
+        <div class="filter-buttons">
+
+            <button class="filter-btn active" data-filter="all">
+                All Designs
+            </button>
+
+            <button class="filter-btn" data-filter="african">
+                African Wear
+            </button>
+
+            <button class="filter-btn" data-filter="women">
+                Women's Fashion
+            </button>
+
+            <button class="filter-btn" data-filter="girls">
+                Girls' Fashion
+            </button>
+
+            <button class="filter-btn" data-filter="custom">
+                Custom Designs
+            </button>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+
+            <article class="design-card african">
+
+                <div class="design-image">
+
+                    <img src="images/gallery2.jpg"
+                         alt="African wear fashion design">
+
+                    <div class="image-overlay">
+
+                        <button class="view-design"
+                                data-image="images/gallery2.jpg"
+                                data-title="African Elegance">
+                            View Design
+                        </button>
+
+                    </div>
+
+                    <span class="design-number">01</span>
+
+                </div>
+
+                <div class="design-info">
+
+                    <div>
+                        <span>African Wear</span>
+                        <h3>African Elegance</h3>
+                    </div>
+
+                    <span class="arrow">↗</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="design-card women">
+
+                <div class="design-image">
+
+                    <img src="images/gallery3.jpg"
+                         alt="Women's fashion design">
+
+                    <div class="image-overlay">
+
+                        <button class="view-design"
+                                data-image="images/gallery3.jpg"
+                                data-title="Bold Woman">
+                            View Design
+                        </button>
+
+                    </div>
+
+                    <span class="design-number">02</span>
+
+                </div>
+
+                <div class="design-info">
+
+                    <div>
+                        <span>Women's Fashion</span>
+                        <h3>Bold Woman</h3>
+                    </div>
+
+                    <span class="arrow">↗</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="design-card african">
+
+                <div class="design-image">
+
+                    <img src="images/galllery4.jpg"
+                         alt="African inspired fashion">
+
+                    <div class="image-overlay">
+
+                        <button class="view-design"
+                                data-image="images/galllery4.jpg"
+                                data-title="Heritage">
+                            View Design
+                        </button>
+
+                    </div>
+
+                    <span class="design-number">03</span>
+
+                </div>
+
+                <div class="design-info">
+
+                    <div>
+                        <span>African Wear</span>
+                        <h3>Heritage</h3>
+                    </div>
+
+                    <span class="arrow">↗</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="design-card women">
+
+                <div class="design-image">
+
+                    <img src="images/gallery5.jpg"
+                         alt="Elegant women's fashion design">
+
+                    <div class="image-overlay">
+
+                        <button class="view-design"
+                                data-image="images/gallery5.jpg"
+                                data-title="Contemporary Grace">
+                            View Design
+                        </button>
+
+                    </div>
+
+                    <span class="design-number">04</span>
+
+                </div>
+
+                <div class="design-info">
+
+                    <div>
+                        <span>Women's Fashion</span>
+                        <h3>Contemporary Grace</h3>
+                    </div>
+
+                    <span class="arrow">↗</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="design-card girls">
+
+                <div class="design-image">
+
+                    <img src="images/child wear.jpg"
+                         alt="Girls fashion design">
+
+                    <div class="image-overlay">
+
+                        <button class="view-design"
+                                data-image="images/child wear.jpg"
+                                data-title="Little Star">
+                            View Design
+                        </button>
+
+                    </div>
+
+                    <span class="design-number">05</span>
+
+                </div>
+
+                <div class="design-info">
+
+                    <div>
+                        <span>Girls' Fashion</span>
+                        <h3>Little Star</h3>
+                    </div>
+
+                    <span class="arrow">↗</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="design-card custom">
+
+                <div class="design-image">
+
+                    <img src="images/gallery7.jpg"
+                         alt="Custom fashion design">
+
+                    <div class="image-overlay">
+
+                        <button class="view-design"
+                                data-image="images/gallery7.jpg"
+                                data-title="Made For You">
+                            View Design
+                        </button>
+
+                    </div>
+
+                    <span class="design-number">06</span>
+
+                </div>
+
+                <div class="design-info">
+
+                    <div>
+                        <span>Custom Design</span>
+                        <h3>Made For You</h3>
+                    </div>
+
+                    <span class="arrow">↗</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="design-card african">
+
+                <div class="design-image">
+
+                    <img src="images/gallery8.jpg"
+                         alt="African fashion collection">
+
+                    <div class="image-overlay">
+
+                        <button class="view-design"
+                                data-image="images/gallery8.jpg"
+                                data-title="African Spirit">
+                            View Design
+                        </button>
+
+                    </div>
+
+                    <span class="design-number">07</span>
+
+                </div>
+
+                <div class="design-info">
+
+                    <div>
+                        <span>African Wear</span>
+                        <h3>African Spirit</h3>
+                    </div>
+
+                    <span class="arrow">↗</span>
+
+                </div>
+
+            </article>
+
+
+            <article class="design-card women">
+
+                <div class="design-image">
+
+                    <img src="images/gallery6.jpg"
+                         alt="Modern fashion design">
+
+                    <div class="image-overlay">
+
+                        <button class="view-design"
+                                data-image="images/gallery6.jpg"
+                                data-title="Pure Confidence">
+                            View Design
+                        </button>
+
+                    </div>
+
+                    <span class="design-number">08</span>
+
+                </div>
+
+                <div class="design-info">
+
+                    <div>
+                        <span>Women's Fashion</span>
+                        <h3>Pure Confidence</h3>
+                    </div>
+
+                    <span class="arrow">↗</span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <section class="design-process">
+
+        <div class="process-content">
+
+            <p class="section-label">YOUR IDEA</p>
+
+            <h2>
+                Don't Just Browse.
+                <span>Create.</span>
+            </h2>
+
+            <p>
+                Have a design you've always wanted to wear?
+                Tell us your idea and let's turn it into something
+                uniquely yours.
+            </p>
+
+            <a href="contact.html" class="process-button">
+                Start A Custom Design →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section class="gallery-cta">
+
+        <div>
+
+            <p class="section-label">DORKAM DESIGNS</p>
+
+            <h2>
+                Your Style.
+                <span>Your Story.</span>
+            </h2>
+
+            <p>
+                Let's create something unforgettable.
+            </p>
+
+            <a href="contact.html" class="cta-button">
+                Contact Us →
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="footer-logo">
+                DORKAM <span>DESIGNS</span>
+            </a>
+
+            <p>
+                Creating elegant African-inspired fashion and
+                custom designs made especially for you.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>Explore</h3>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div class="footer-contact">
+
+            <h3>Contact</h3>
+
+            <p>+254 712 623 114</p>
+            <p>info@dorkamdesigns.com</p>
+            <p>Machakos, Kenya</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 DORKAM Designs. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<div class="lightbox" id="lightbox">
+
+    <button class="close-lightbox" id="closeLightbox">
+        ×
+    </button>
+
+    <div class="lightbox-content">
+
+        <img id="lightboxImage" src="" alt="Fashion design">
+
+        <div class="lightbox-title" id="lightboxTitle"></div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+    });
+
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const designCards = document.querySelectorAll(".design-card");
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            filterButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            const filter = button.dataset.filter;
+
+            designCards.forEach(card => {
+
+                if (filter === "all" || card.classList.contains(filter)) {
+
+                    card.style.display = "block";
+
+                    setTimeout(() => {
+                        card.classList.add("show-card");
+                    }, 20);
+
+                } else {
+
+                    card.style.display = "none";
+                    card.classList.remove("show-card");
+
+                }
+
+            });
+
+        });
+
+    });
+
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxTitle = document.getElementById("lightboxTitle");
+    const closeLightbox = document.getElementById("closeLightbox");
+
+    const viewButtons = document.querySelectorAll(".view-design");
+
+    viewButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            lightboxImage.src = button.dataset.image;
+            lightboxTitle.textContent = button.dataset.title;
+
+            lightbox.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+
+        });
+
+    });
+
+
+    closeLightbox.addEventListener("click", () => {
+
+        lightbox.classList.remove("active");
+
+        document.body.style.overflow = "auto";
+
+    });
+
+
+    lightbox.addEventListener("click", (event) => {
+
+        if (event.target === lightbox) {
+
+            lightbox.classList.remove("active");
+
+            document.body.style.overflow = "auto";
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
